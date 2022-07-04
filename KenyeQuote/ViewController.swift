@@ -8,15 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var randomQouta: UIButton!
+    @IBOutlet weak var label: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        randomQouta.layer.cornerRadius = 10
     }
     
-    @IBOutlet weak var label: UILabel!
+    
     @IBAction func randomQouta(_ sender: Any) {
-        
         let url = URL(string: "https://api.kanye.rest")!
         
         let task = URLSession.shared.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
